@@ -1,0 +1,190 @@
+/* =========================================================
+   DHAGA — animations.css
+   Motion system: entrances, hovers, scroll reveal, cart + layers.
+   Only transform / opacity are animated, so it stays smooth on
+   low-end Android phones. Everything is disabled or softened
+   under prefers-reduced-motion at the bottom of this file.
+   ========================================================= */
+
+/* ---------- 1. Keyframes ---------- */
+@keyframes page-in      { from { opacity: 0; } to { opacity: 1; } }
+@keyframes marquee      { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes line-up      { from { transform: translateY(110%); } to { transform: translateY(0); } }
+@keyframes fade-up      { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes reveal-up    { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-pop     { from { opacity: 0; transform: translateY(40px) scale(.88) rotate(var(--r, 0deg)); } to { opacity: 1; transform: translateY(0) scale(1) rotate(var(--r, 0deg)); } }
+@keyframes float        { 0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-12px) rotate(var(--r, 0deg)); } }
+@keyframes float-slow   { 0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-18px) rotate(calc(var(--r, 0deg) + 8deg)); } }
+@keyframes spin-float   { 0% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(180deg); } 100% { transform: translateY(0) rotate(360deg); } }
+@keyframes wobble       { 0%, 100% { transform: rotate(var(--r, 0deg)); } 50% { transform: rotate(calc(var(--r, 0deg) + 9deg)) scale(1.04); } }
+@keyframes twinkle      { 0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; } 50% { transform: scale(.6) rotate(45deg); opacity: .5; } }
+@keyframes heart-pop    { 0% { transform: scale(1); } 35% { transform: scale(1.55); } 65% { transform: scale(.88); } 100% { transform: scale(1); } }
+@keyframes heart-ring   { from { transform: scale(.4); opacity: .8; } to { transform: scale(1.9); opacity: 0; } }
+@keyframes bump         { 0% { transform: scale(1); } 40% { transform: scale(1.3); } 100% { transform: scale(1); } }
+@keyframes added-pulse  { 0% { transform: scale(1); } 40% { transform: scale(1.06); } 100% { transform: scale(1); } }
+@keyframes item-out     { 0% { opacity: 1; transform: translateX(0); max-height: 160px; } 60% { opacity: 0; transform: translateX(60px); max-height: 160px; } 100% { opacity: 0; transform: translateX(60px); max-height: 0; padding-top: 0; padding-bottom: 0; border-bottom-width: 0; } }
+@keyframes shimmer      { to { background-position: -200% 0; } }
+
+/* ---------- 2. Page entrance ---------- */
+body { animation: page-in .7s ease backwards; }
+
+/* ---------- 3. Announcement marquee ---------- */
+.announcement__track { animation: marquee 32s linear infinite; will-change: transform; }
+@media (hover: hover) { .announcement:hover .announcement__track { animation-play-state: paused; } }
+
+/* ---------- 4. Hero ---------- */
+.js .hero__title .line__inner { transform: translateY(110%); animation: line-up .95s var(--ease) forwards; }
+.hero__title .line:nth-child(1) .line__inner { animation-delay: .15s; }
+.hero__title .line:nth-child(2) .line__inner { animation-delay: .27s; }
+.hero__title .line:nth-child(3) .line__inner { animation-delay: .39s; }
+.hero__eyebrow { animation: fade-up .8s var(--ease) .05s backwards; }
+.hero__sub     { animation: fade-up .8s var(--ease) .6s backwards; }
+.hero__cta     { animation: fade-up .8s var(--ease) .72s backwards; }
+.perks         { animation: fade-up .8s var(--ease) .84s backwards; }
+.doodle        { animation: fade-up .8s var(--ease) .95s backwards; }
+
+.hero-card--main  { animation: hero-pop 1s var(--ease) .3s backwards,  float 7s ease-in-out 1.4s infinite; }
+.hero-card--side  { animation: hero-pop 1s var(--ease) .5s backwards,  float 8s ease-in-out 1.6s infinite; }
+.hero-card--small { animation: hero-pop 1s var(--ease) .7s backwards,  float 6s ease-in-out 1.8s infinite; }
+.sticker          { animation: hero-pop .9s var(--ease) 1s backwards,  wobble 6s ease-in-out 2s infinite; }
+
+/* Floating crochet flowers, yarn and doodles */
+.deco--f1 { animation: spin-float 16s ease-in-out infinite; }
+.deco--f2 { animation: spin-float 20s ease-in-out -6s infinite reverse; }
+.deco--f3 { animation: spin-float 18s ease-in-out -3s infinite; }
+.deco--yarn { animation: float-slow 9s ease-in-out infinite; }
+.deco--s1, .deco--s2 { animation: twinkle 3.2s ease-in-out infinite; }
+.deco--s2 { animation-delay: -1.4s; }
+.blob--blush { animation: float-slow 14s ease-in-out infinite; }
+.blob--lavender { animation: float-slow 17s ease-in-out -5s infinite; }
+.story__yarn--a { animation: float-slow 10s ease-in-out infinite; }
+.story__yarn--b { animation: float-slow 12s ease-in-out -4s infinite; }
+.story__flower { animation: spin-float 22s ease-in-out infinite; }
+
+/* ---------- 5. Scroll reveal (IntersectionObserver adds .is-visible) ---------- */
+.js .reveal { opacity: 0; }
+.js .reveal.is-visible { opacity: 1; animation: reveal-up .75s var(--ease) var(--d, 0ms) backwards; }
+
+/* ---------- 6. Loading skeleton ---------- */
+.skeleton { animation: shimmer 1.4s linear infinite; }
+
+/* ---------- 7. Buttons and micro-interactions ---------- */
+.btn, .icon-btn, .chip, .pill, .swatch, .qty button, .wish-btn, .link-btn {
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), background-color .25s ease, color .25s ease, border-color .25s ease, opacity .25s ease;
+}
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--brown); }
+.icon-btn:active, .chip:active, .wish-btn:active, .swatch:active { transform: scale(.92); }
+.main-nav a, .footer__list a, .mobile-nav__list a { transition: background-color .25s ease, color .25s ease, padding-left .25s var(--ease); }
+
+@media (hover: hover) {
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--brown); }
+  .btn--primary:hover { box-shadow: 5px 5px 0 var(--blush-deep); background: #5a463e; }
+  .btn--whatsapp:hover { background: #8fedb5; }
+  .icon-btn:hover { background: var(--blush); }
+  .icon-btn--outline:hover { background: var(--butter); }
+  .chip:hover { background: var(--butter); transform: translateY(-2px); }
+  .chip[aria-pressed="true"]:hover { background: var(--brown); }
+  .pill:hover { background: var(--lavender); }
+  .swatch:hover { transform: scale(1.12); }
+  .qty button:hover:not(:disabled) { background: var(--blush); }
+  .wish-btn:hover { transform: scale(1.1); background: #fff; }
+  .mobile-nav__list a:hover { padding-left: 10px; color: var(--berry); }
+}
+
+.badge-count { transition: transform .25s var(--ease); }
+.is-bump { animation: bump .45s var(--ease); }
+
+/* Add-to-cart success */
+.add-btn.is-added { background: var(--mint); color: var(--brown); border-color: var(--brown); box-shadow: 3px 3px 0 var(--brown); animation: added-pulse .45s var(--ease); }
+
+/* Wishlist heart */
+.wish-btn::after, .btn[data-wish-btn]::after { content: none; }
+.wish-btn::after { content: ''; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--berry); opacity: 0; pointer-events: none; }
+.wish-btn.is-pop .icon, [data-wish-btn].is-pop .icon { animation: heart-pop .55s var(--ease); }
+.wish-btn.is-pop::after { animation: heart-ring .6s ease-out; }
+[data-wish-btn] .icon { transition: fill .2s ease; }
+
+/* ---------- 8. Cards: products, categories, instagram ---------- */
+.product-card__media { transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.product-card__media img { transition: transform .8s var(--ease); }
+.cat-card { transition: transform .4s var(--ease), rotate .4s var(--ease), box-shadow .4s var(--ease); }
+.cat-card__img img { transition: transform .7s var(--ease); }
+.cat-card__cta .icon { transition: transform .3s var(--ease); }
+.insta-tile img { transition: transform .7s var(--ease); }
+.insta-tile__icon { transition: opacity .3s ease; }
+
+@media (hover: hover) {
+  .product-card:hover .product-card__media { transform: translate(-2px, -6px); box-shadow: 8px 10px 0 var(--blush-deep); }
+  .product-card:nth-child(3n + 2):hover .product-card__media { box-shadow: 8px 10px 0 var(--lav-deep); }
+  .product-card:nth-child(3n + 3):hover .product-card__media { box-shadow: 8px 10px 0 var(--butter-deep); }
+  .product-card:hover .product-card__media img { transform: scale(1.1); }
+
+  .cat-card:hover { rotate: 0deg; transform: translateY(-8px); box-shadow: 7px 11px 0 var(--brown); }
+  .cat-card:hover .cat-card__img img { transform: scale(1.1); }
+  .cat-card:hover .cat-card__cta .icon { transform: translateX(5px); }
+
+  .insta-tile:hover img { transform: scale(1.1); }
+  .insta-tile:hover .insta-tile__icon { opacity: 1; }
+}
+.cat-card:active { transform: scale(.98); }
+
+/* ---------- 9. Layers: overlay, drawers, mobile nav, modals ---------- */
+.overlay { transition: opacity .35s ease, visibility 0s linear .35s; }
+.overlay.is-visible { opacity: 1; visibility: visible; transition-delay: 0s; }
+
+/* Cart + wishlist: bottom sheet on mobile, right drawer from 640px up */
+.drawer { transform: translateY(105%); transition: transform .5s var(--ease), visibility 0s linear .5s; }
+.drawer.is-open { transform: none; visibility: visible; transition-delay: 0s; }
+@media (min-width: 640px) {
+  .drawer { transform: translateX(105%); }
+  .drawer.is-open { transform: none; }
+}
+
+.mobile-nav { transform: translateX(-105%); transition: transform .5s var(--ease), visibility 0s linear .5s; }
+.mobile-nav.is-open { transform: none; visibility: visible; transition-delay: 0s; }
+.mobile-nav.is-open .mobile-nav__list li { animation: fade-up .5s var(--ease) backwards; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(1) { animation-delay: .12s; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(2) { animation-delay: .18s; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(3) { animation-delay: .24s; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(4) { animation-delay: .30s; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(5) { animation-delay: .36s; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(6) { animation-delay: .42s; }
+
+.modal { opacity: 0; transition: opacity .3s ease, visibility 0s linear .3s; }
+.modal.is-open { opacity: 1; visibility: visible; transition-delay: 0s; }
+.modal__panel { transform: translateY(48px) scale(.98); transition: transform .5s var(--ease); }
+.modal.is-open .modal__panel { transform: none; }
+
+.mobile-cart-bar { transition: transform .4s var(--ease); }
+.mobile-cart-bar:active { transform: scale(.98); }
+body.layer-open .mobile-cart-bar { transform: translateY(170%); }
+
+/* Cart line removal */
+.cart-item { overflow: hidden; }
+.cart-item.is-removing { animation: item-out .4s var(--ease) forwards; pointer-events: none; }
+
+/* Quick view image swap */
+.qv__main img { animation: page-in .35s ease; }
+.qv__thumb { transition: opacity .25s ease, border-color .25s ease, transform .25s var(--ease); }
+
+/* ---------- 10. Toasts ---------- */
+.toast { opacity: 0; transform: translateY(16px) scale(.96); transition: opacity .35s ease, transform .45s var(--ease); }
+.toast.is-in { opacity: 1; transform: none; }
+.toast.is-out { opacity: 0; transform: translateY(-10px) scale(.96); }
+
+/* ---------- 11. Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .001ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  .announcement__track { animation: none !important; }
+  .js .hero__title .line__inner { transform: none; }
+  .js .reveal { opacity: 1; }
+  .deco, .blob, .hero-card, .sticker { animation: none !important; }
+}

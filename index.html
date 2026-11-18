@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DHAGA | Handmade Crochet Bags, Gajras &amp; Gifts</title>
+  <meta name="description" content="DHAGA is a handmade crochet brand: bags, gajras, keychains, hair accessories, bouquets and customised gifts. Handmade with Love. Styled with You. Order easily on WhatsApp.">
+  <meta name="theme-color" content="#FFF8F0">
+
+  <!-- Open Graph / social preview. Replace the URL and image with your live GitHub Pages address. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DHAGA">
+  <meta property="og:title" content="DHAGA | Handmade Crochet Bags, Gajras &amp; Gifts">
+  <meta property="og:description" content="Little Threads. Big Feelings. Handcrafted crochet treasures made to add a little magic to your everyday style.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23F5DCE2' stroke='%2345352F' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='32' font-family='Georgia,serif' font-style='italic' text-anchor='middle' fill='%2345352F'%3Ed%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- SVG sprite: reusable crochet motifs and icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-flower" viewBox="0 0 100 100">
+        <g fill="currentColor" stroke="#45352F" stroke-width="1.8" stroke-dasharray="3 3">
+          <circle cx="78" cy="50" r="17"/><circle cx="64" cy="74.2" r="17"/><circle cx="36" cy="74.2" r="17"/>
+          <circle cx="22" cy="50" r="17"/><circle cx="36" cy="25.8" r="17"/><circle cx="64" cy="25.8" r="17"/>
+        </g>
+        <circle cx="50" cy="50" r="13" fill="#F7E7A8" stroke="#45352F" stroke-width="2"/>
+        <circle cx="50" cy="50" r="7" fill="none" stroke="#45352F" stroke-width="1.5" stroke-dasharray="2 3"/>
+      </symbol>
+      <symbol id="i-yarn" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="38" fill="currentColor" stroke="#45352F" stroke-width="2.5"/>
+        <g fill="none" stroke="#45352F" stroke-width="2" stroke-linecap="round">
+          <path d="M16 40c20 10 48 10 68 0"/><path d="M13 55c22 12 52 12 74 0"/><path d="M20 72c18 8 42 8 60 0"/>
+          <path d="M30 18c-6 22-6 44 2 66"/><path d="M52 12c8 22 8 52 0 76"/>
+          <path d="M82 70c8 6 12 14 8 22s-18 4-26 8"/>
+        </g>
+      </symbol>
+      <symbol id="i-squiggle" viewBox="0 0 120 30"><path d="M4 15q10-16 20 0t20 0 20 0 20 0 20 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></symbol>
+      <symbol id="i-star" viewBox="0 0 40 40"><path d="M20 3l3 14 14 3-14 3-3 14-3-14L3 20l14-3z" fill="currentColor"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.8 4.5 6.4 4.5c2.1 0 3.7 1.1 5.6 3.2 1.9-2.1 3.5-3.2 5.6-3.2 3.6 0 5.5 3.8 4 7.2C19.5 16.4 12 21 12 21z"/></symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8z"/><path d="M8.5 8V6.5a3.5 3.5 0 0 1 7 0V8"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5L3 21z"/><path d="M9 8.5c.2 2.6 2.9 5.3 5.6 5.6l1.2-1.4-2-1.1-.8.7c-.9-.4-1.9-1.4-2.3-2.3l.7-.8-1.1-2L9 8.5z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></symbol>
+      <symbol id="i-order" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- A. Announcement bar -->
+  <div class="announcement" role="region" aria-label="Announcement">
+    <div class="announcement__track">
+      <span class="announcement__group">
+        <span>Handmade with Love ♡</span><span class="dot">✿</span><span>WhatsApp Order: +91 7728990513</span><span class="dot">✿</span><span>Made Especially for You</span><span class="dot">✿</span><span>Order Easily on WhatsApp</span><span class="dot">✿</span><span>Small-batch, Made to Order</span><span class="dot">✿</span>
+      </span>
+      <span class="announcement__group" aria-hidden="true">
+        <span>Handmade with Love ♡</span><span class="dot">✿</span><span>WhatsApp Order: +91 7728990513</span><span class="dot">✿</span><span>Made Especially for You</span><span class="dot">✿</span><span>Order Easily on WhatsApp</span><span class="dot">✿</span><span>Small-batch, Made to Order</span><span class="dot">✿</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- B. Header / navigation -->
+  <header class="site-header" id="top">
+    <div class="site-header__inner container">
+      <button class="icon-btn nav-toggle" type="button" data-action="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+
+      <a class="logo" href="#top" aria-label="DHAGA home">
+        <svg class="logo__mark" aria-hidden="true" viewBox="0 0 100 100"><use href="#i-yarn"></use></svg>
+        <span class="logo__word">dhaga</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul data-nav-list></ul>
+      </nav>
+
+      <div class="header-actions">
+       
+        <div id="user-header-area">
+          <button class="btn btn--ghost btn--sm" type="button" data-action="open-auth" id="header-login-btn">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg> Login
+          </button>
+        </div>
+        <button class="icon-btn icon-btn--badge" type="button" data-action="open-wishlist" aria-label="Open wishlist">
+          <svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg>
+          <span class="badge-count is-empty" data-wish-count>0</span>
+        </button>
+        <button class="icon-btn icon-btn--badge" type="button" data-action="open-cart" data-cart-target aria-label="Open cart">
+          <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>
+          <span class="badge-count is-empty" data-cart-count>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- C. Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--blush"></span>
+        <span class="blob blob--lavender"></span>
+        <span class="blob blob--butter"></span>
+      </div>
+
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <p class="eyebrow hero__eyebrow">new drop · crocheted in small batches</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="line"><span class="line__inner">Little</span></span>
+            <span class="line"><span class="line__inner">Threads.</span></span>
+            <span class="line"><span class="line__inner"><em>Big Feelings.</em></span></span>
+          </h1>
+          <p class="hero__sub">Handcrafted crochet treasures made to add a little magic to your everyday style.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--lg" href="#shop" data-action="filter" data-filter="all">Explore Collection</a>
+            <a class="btn btn--ghost btn--lg" href="#shop" data-action="filter" data-filter="bags">Shop Handmade</a>
+          </div>
+          <ul class="perks" aria-label="Why DHAGA">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> 100% handmade</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Made to order</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Gift-ready</li>
+          </ul>
+          <svg class="doodle doodle--squiggle" aria-hidden="true" viewBox="0 0 120 30"><use href="#i-squiggle"></use></svg>
+        </div>
+
+        <div class="hero__collage">
+          <figure class="hero-card hero-card--main">
+            <img src="assets/images/hero/hero-1.jpg" alt="Handmade pink crochet sling bag" width="480" height="620" fetchpriority="high" decoding="async">
+          </figure>
+          <figure class="hero-card hero-card--side">
+            <img src="assets/images/hero/hero-2.jpg" alt="Crochet gajra with tiny flowers" width="320" height="400" decoding="async">
+          </figure>
+          <figure class="hero-card hero-card--small">
+            <img src="assets/images/hero/hero-3.jpg" alt="Handmade crochet daisy keychain" width="240" height="240" decoding="async">
+          </figure>
+          <div class="sticker" aria-hidden="true"><span>made<br>by hand<br>♡</span></div>
+
+          <svg class="deco deco--flower deco--f1" aria-hidden="true" viewBox="0 0 100 100" style="color:#F5DCE2"><use href="#i-flower"></use></svg>
+          <svg class="deco deco--flower deco--f2" aria-hidden="true" viewBox="0 0 100 100" style="color:#DCD3F5"><use href="#i-flower"></use></svg>
+          <svg class="deco deco--flower deco--f3" aria-hidden="true" viewBox="0 0 100 100" style="color:#F7E7A8"><use href="#i-flower"></use></svg>
+          <svg class="deco deco--yarn" aria-hidden="true" viewBox="0 0 100 100" style="color:#DCD3F5"><use href="#i-yarn"></use></svg>
+          <svg class="deco deco--star deco--s1" aria-hidden="true" viewBox="0 0 40 40" style="color:#45352F"><use href="#i-star"></use></svg>
+          <svg class="deco deco--star deco--s2" aria-hidden="true" viewBox="0 0 40 40" style="color:#E9B8C4"><use href="#i-star"></use></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- D. Categories -->
+    <section class="section categories" id="categories" aria-labelledby="cat-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">shop by vibe</p>
+          <h2 class="section__title" id="cat-title">Find your <em>little something</em></h2>
+          <p class="section__lede">Ten corners of the DHAGA world. Pick one and start exploring.</p>
+        </header>
+        <div class="cat-grid" id="category-grid"></div>
+      </div>
+    </section>
+
+    <!-- E + F. Featured products, filtering and search -->
+    <section class="section shop" id="shop" aria-labelledby="shop-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">featured &amp; fresh off the hook</p>
+          <h2 class="section__title" id="shop-title">The <em>Collection</em></h2>
+          <p class="section__lede">Every piece is made by hand, so each one is a little bit one-of-one.</p>
+        </header>
+
+        <div class="shop-toolbar">
+          <form class="search" id="search-form" role="search">
+            <label class="visually-hidden" for="search-input">Search products by name</label>
+            <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+            <input id="search-input" type="search" placeholder="Search bags, gajras, keychains…" autocomplete="off" enterkeyhint="search">
+          </form>
+          <div class="sort">
+            <label for="sort-select">Sort by</label>
+            <select id="sort-select">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="chips" id="filter-chips" role="group" aria-label="Filter by category"></div>
+        <p class="result-meta" id="result-meta" aria-live="polite"></p>
+
+        <div class="product-grid" id="product-grid" aria-busy="true"></div>
+
+        <div class="empty-results" id="empty-results" hidden>
+          <svg class="empty-state__art" aria-hidden="true" viewBox="0 0 100 100" style="color:#F5DCE2"><use href="#i-yarn"></use></svg>
+          <h3>Nothing matches that (yet)</h3>
+          <p>Try a different word, or custom orders are always welcome on WhatsApp.</p>
+          <button class="btn btn--primary" type="button" data-action="reset-filters">Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- H. Story -->
+    <section class="story" id="story" aria-labelledby="story-title">
+      <div class="story__bg" aria-hidden="true"></div>
+      <svg class="deco story__yarn story__yarn--a" aria-hidden="true" viewBox="0 0 100 100" style="color:#F5DCE2"><use href="#i-yarn"></use></svg>
+      <svg class="deco story__yarn story__yarn--b" aria-hidden="true" viewBox="0 0 100 100" style="color:#F7E7A8"><use href="#i-yarn"></use></svg>
+      <svg class="deco story__flower" aria-hidden="true" viewBox="0 0 100 100" style="color:#DCD3F5"><use href="#i-flower"></use></svg>
+      <div class="container">
+        <div class="story__card reveal">
+          <p class="eyebrow">the dhaga story</p>
+          <h2 class="story__title" id="story-title">Not Just Made.<br><em>Made with Love.</em></h2>
+          <p class="story__text">Every stitch tells a story. Every piece is carefully handcrafted with patience, creativity and love.</p>
+          <ul class="story__stats">
+            <li><strong>1 hook</strong><span>one stitch at a time</span></li>
+            <li><strong>0 factories</strong><span>only warm hands</span></li>
+            <li><strong>∞ love</strong><span>in every loop</span></li>
+          </ul>
+          <a class="btn btn--primary" href="#shop" data-action="filter" data-filter="gifts">Create a custom gift</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- I. Instagram -->
+    <section class="section insta" id="instagram" aria-labelledby="insta-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">on the gram</p>
+          <h2 class="section__title" id="insta-title">Made by Hand. <em>Loved by You.</em></h2>
+        </header>
+        <div class="insta-grid" id="insta-grid"></div>
+        <div class="insta__cta">
+          <a class="btn btn--ghost btn--lg" data-instagram-link href="#" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg> Follow Us <span data-instagram-handle></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- J. Footer -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="logo logo--footer" href="#top" aria-label="DHAGA home">
+          <svg class="logo__mark" aria-hidden="true" viewBox="0 0 100 100"><use href="#i-yarn"></use></svg>
+          <span class="logo__word">dhaga</span>
+        </a>
+        <p class="footer__tag">Handmade with Love. Styled with You.</p>
+        <p class="footer__about">DHAGA is a small handmade crochet brand. Bags, gajras, accessories and gifts, stitched with patience and a lot of colour.</p>
+      </div>
+      <div>
+        <h3 class="footer__title">Quick links</h3>
+        <ul class="footer__list" data-nav-list></ul>
+      </div>
+      <div>
+        <h3 class="footer__title">Categories</h3>
+        <ul class="footer__list" data-footer-categories></ul>
+      </div>
+      <div>
+        <h3 class="footer__title">Say hello</h3>
+        <ul class="footer__list">
+          <li><a data-wa-link href="#" target="_blank" rel="noopener noreferrer">WhatsApp: <span data-wa-display>WhatsApp us</span></a></li>
+          <li><a data-instagram-link href="#" target="_blank" rel="noopener noreferrer">Instagram <span data-instagram-handle></span></a></li>
+          <li><a href="#orders" data-action="open-orders">📦 My Orders &amp; Tracking</a></li>
+          <li><a href="admin.html">🔐 Admin Portal (Standalone admin.html)</a></li>
+        </ul>
+        <p class="footer__note">Orders are confirmed on WhatsApp. No online payment is taken on this site.</p>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="year">2026</span> DHAGA. All rights reserved.</p>
+      <p>Handmade with love ♡</p>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile cart access -->
+  <button class="mobile-cart-bar" type="button" data-action="open-cart" aria-label="Open cart">
+    <span class="mobile-cart-bar__left">
+      <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>
+      <span><span data-cart-count>0</span> items</span>
+    </span>
+    <span class="mobile-cart-bar__right"><span data-cart-total>Empty</span> <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+  </button>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" data-action="close-layer"></div>
+
+  <!-- Mobile navigation -->
+  <aside class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+    <div class="mobile-nav__head">
+      <span class="logo__word">dhaga</span>
+      <button class="icon-btn" type="button" data-action="close-layer" aria-label="Close menu"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <ul class="mobile-nav__list" data-nav-list></ul>
+    <p class="mobile-nav__foot">Handmade with Love. Styled with You.</p>
+  </aside>
+
+  <!-- Cart drawer -->
+  <aside class="drawer drawer--cart" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer__head">
+      <h2 id="cart-title">Your Basket <span data-cart-count-text></span></h2>
+      <button class="icon-btn" type="button" data-action="close-layer" aria-label="Close cart"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="drawer__body" id="cart-body"></div>
+    <div class="drawer__foot" id="cart-foot" hidden>
+      <div class="totals"><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div>
+      <p class="drawer__note">Orders processed via WhatsApp: <strong>+91 77289 90513</strong></p>
+      <button class="btn btn--whatsapp btn--block btn--lg" type="button" data-action="checkout">
+        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Order via WhatsApp
+      </button>
+      <div class="cart-wa-direct">
+        <a class="btn-wa-link" id="cart-quick-wa-link" href="#" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Direct WhatsApp Link
+        </a>
+        <button class="link-btn" type="button" data-action="copy-cart-wa-link">📋 Copy WhatsApp Link with Items</button>
+      </div>
+      <button class="link-btn" type="button" data-action="clear-cart">Clear cart</button>
+    </div>
+  </aside>
+
+  <!-- Wishlist drawer -->
+  <aside class="drawer drawer--wish" id="wishlist-drawer" role="dialog" aria-modal="true" aria-labelledby="wish-title" aria-hidden="true">
+    <div class="drawer__head">
+      <h2 id="wish-title">Your Wishlist</h2>
+      <button class="icon-btn" type="button" data-action="close-layer" aria-label="Close wishlist"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="drawer__body" id="wishlist-body"></div>
+  </aside>
+
+  <!-- Quick view -->
+  <div class="modal" id="quick-view" role="dialog" aria-modal="true" aria-labelledby="qv-title" aria-hidden="true">
+    <div class="modal__panel modal__panel--qv">
+      <button class="icon-btn modal__close" type="button" data-action="close-layer" aria-label="Close quick view"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+      <div id="qv-content"></div>
+    </div>
+  </div>
+
+  <!-- WhatsApp order handoff -->
+  <div class="modal" id="order-modal" role="dialog" aria-modal="true" aria-labelledby="order-title" aria-hidden="true">
+    <div class="modal__panel modal__panel--order">
+      <button class="icon-btn modal__close" type="button" data-action="close-layer" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+
+      <!-- Step indicator -->
+      <div class="order-steps">
+        <div class="order-step-pill is-active" id="pill-step-1">
+          <span class="order-step-num">1</span> Order Details
+        </div>
+        <span class="order-step-sep">›</span>
+        <div class="order-step-pill" id="pill-step-2">
+          <span class="order-step-num">2</span> WhatsApp Handoff
+        </div>
+        <span class="order-step-sep">›</span>
+        <div class="order-step-pill" id="pill-step-3">
+          <span class="order-step-num">3</span> Complete
+        </div>
+      </div>
+
+      <!-- STEP 1: Details & Summary -->
+      <div id="order-step-1">
+        <p class="eyebrow">handmade with love</p>
+        <h2 id="order-title" class="modal__title">Complete Your Order</h2>
+        <p class="order-summary" id="order-summary"></p>
+
+        <!-- Preview of ordered items -->
+        <div class="order-items-preview" id="order-items-preview"></div>
+
+        <form class="order-form" id="order-details-form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="order-name">Your Full Name <span class="req">*</span></label>
+              <input id="order-name" type="text" placeholder="e.g. Priya Sharma" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="order-phone">WhatsApp / Mobile Number <span class="req">*</span></label>
+              <input id="order-phone" type="tel" placeholder="e.g. 9876543210" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="order-address">Delivery Address (House/Flat, Street, Area) <span class="req">*</span></label>
+            <textarea id="order-address" rows="2" placeholder="Full delivery address for shipping" required autocomplete="street-address"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="order-city">City &amp; State <span class="req">*</span></label>
+              <input id="order-city" type="text" placeholder="e.g. Jaipur, Rajasthan" required autocomplete="address-level2">
+            </div>
+            <div class="form-group">
+              <label for="order-pincode">Pincode <span class="req">*</span></label>
+              <input id="order-pincode" type="text" placeholder="e.g. 302020" required autocomplete="postal-code" maxlength="10">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="order-notes">Customization / Note (Optional)</label>
+            <textarea id="order-notes" rows="2" placeholder="Any custom name for gift items, colour preference, or special packaging instructions"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="order-payment">Payment Preference</label>
+            <select id="order-payment">
+              <option value="UPI (Google Pay / PhonePe / Paytm / QR)">UPI (Google Pay / PhonePe / Paytm on WhatsApp)</option>
+              <option value="Cash on Delivery (Confirm on WhatsApp)">Cash on Delivery (Confirm on WhatsApp)</option>
+              <option value="Direct Bank Transfer / NEFT">Direct Bank Transfer</option>
+            </select>
+          </div>
+
+          <p class="order-disclaimer">Orders will be forwarded to <strong>+91 7728990513</strong>. DHAGA will reply on WhatsApp to confirm availability and dispatch dates.</p>
+
+          <div class="modal__actions">
+            <button class="btn btn--whatsapp btn--block btn--lg" type="button" data-action="submit-order" id="btn-submit-order">
+              <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Send Order on WhatsApp (7728990513)
+            </button>
+            <button class="btn btn--ghost btn--sm" type="button" data-action="copy-order-link">🔗 Copy WhatsApp Link</button>
+            <button class="btn btn--ghost btn--sm" type="button" data-action="copy-order-text">📋 Copy Order Message</button>
+            <button class="btn btn--ghost btn--sm" type="button" data-action="close-layer">Back to cart</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 2: WhatsApp Handoff Check -->
+      <div id="order-step-2" hidden>
+        <p class="eyebrow">one quick check</p>
+        <h2 class="modal__title">Did you send your order message?</h2>
+        <p>WhatsApp was opened with your order pre-filled for <strong>+91 7728990513</strong>. Just tap <strong>Send</strong> in WhatsApp.</p>
+        
+        <p style="font-size: .88rem; font-weight: 700; margin-top: 10px;">Message Sent to WhatsApp:</p>
+        <div class="order-msg-preview" id="order-msg-preview"></div>
+
+        <div class="modal__actions modal__actions--stack">
+          <button class="btn btn--primary btn--lg" type="button" data-action="wa-sent" data-autofocus>✓ Yes, I sent it! (Clear my cart)</button>
+          <a class="btn btn--whatsapp" id="wa-reopen" href="#" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> WhatsApp didn't open? Open WhatsApp again
+          </a>
+          <button class="btn btn--ghost" type="button" data-action="copy-order-text">📋 Copy Order Text to Clipboard</button>
+          <button class="btn btn--ghost" type="button" data-action="order-step-1">← Edit Delivery Details</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Order Completed Confirmation -->
+      <div id="order-step-3" hidden>
+        <div class="order-success-card">
+          <div class="order-success-icon">🌸</div>
+          <p class="eyebrow">thank you</p>
+          <h2 class="modal__title" style="margin: 0;">Order Submitted!</h2>
+          <span class="order-id-badge" id="order-confirmed-id">#DH-0000</span>
+          <p>Your order details have been forwarded to our WhatsApp number <strong>+91 7728990513</strong>.</p>
+          <p class="order-disclaimer">Our team at DHAGA will review your items and reply back to your WhatsApp with delivery timelines and payment details.</p>
+          <div class="modal__actions" style="justify-content: center; margin-top: 10px;">
+            <button class="btn btn--whatsapp" type="button" data-action="open-orders">View Order Status in My Orders</button>
+            <button class="btn btn--primary" type="button" data-action="close-layer">Continue Shopping</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Auth & OTP Modal -->
+  <div class="modal" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title" aria-hidden="true">
+    <div class="modal__panel modal__panel--auth">
+      <button class="icon-btn modal__close" type="button" data-action="close-layer" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+      
+      <!-- Auth Step 1: Mobile & Name -->
+      <div id="auth-step-1">
+        <p class="eyebrow">welcome to dhaga</p>
+        <h2 id="auth-title" class="modal__title">Login / Register</h2>
+        <p style="margin-bottom: 14px; font-size: .92rem; color: var(--brown-soft);">Enter your mobile number to receive a verification OTP.</p>
+        
+        <form class="order-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="auth-mobile">Mobile Number <span class="req">*</span></label>
+            <input id="auth-mobile" type="tel" placeholder="e.g. 9876543210" maxlength="10" required autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="auth-fullname">Your Full Name (Optional)</label>
+            <input id="auth-fullname" type="text" placeholder="e.g. Priya Sharma" autocomplete="name">
+          </div>
+          <div class="modal__actions modal__actions--stack" style="margin-top: 14px;">
+            <button class="btn btn--primary btn--block btn--lg" type="button" data-action="auth-send-otp">
+              Send OTP
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Auth Step 2: Enter OTP -->
+      <div id="auth-step-2" hidden>
+        <p class="eyebrow">verification</p>
+        <h2 class="modal__title">Enter OTP Code</h2>
+        <p style="margin-bottom: 12px; font-size: .92rem; color: var(--brown-soft);">We sent an OTP to <strong id="auth-target-mobile">+91 XXXXX XXXXX</strong>.</p>
+        
+        <div class="demo-otp-banner">
+          <span>⚡ Demo OTP: <strong>123456</strong></span>
+        </div>
+
+        <form class="order-form" onsubmit="return false;" style="margin-top: 12px;">
+          <div class="form-group">
+            <label for="auth-otp-input">6-digit OTP <span class="req">*</span></label>
+            <input id="auth-otp-input" type="text" placeholder="123456" maxlength="6" style="font-size: 1.4rem; letter-spacing: 6px; text-align: center; font-weight: 700;" required>
+          </div>
+          <div class="modal__actions modal__actions--stack" style="margin-top: 14px;">
+            <button class="btn btn--primary btn--block btn--lg" type="button" data-action="auth-verify-otp">
+              Verify OTP &amp; Login
+            </button>
+            <button class="link-btn" type="button" data-action="auth-back-step1">Change Mobile Number</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer "My Orders" Modal -->
+  <div class="modal" id="orders-modal" role="dialog" aria-modal="true" aria-labelledby="orders-modal-title" aria-hidden="true">
+    <div class="modal__panel modal__panel--orders-list">
+      <button class="icon-btn modal__close" type="button" data-action="close-layer" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+
+      <div class="orders-head">
+        <p class="eyebrow">order history &amp; status</p>
+        <h2 id="orders-modal-title" class="modal__title">My Orders</h2>
+        <div id="orders-user-badge" class="orders-user-badge"></div>
+      </div>
+
+      <div id="orders-container" class="orders-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Store Admin Portal Modal -->
+  <div class="modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" aria-hidden="true">
+    <div class="modal__panel modal__panel--admin">
+      <button class="icon-btn modal__close" type="button" data-action="close-layer" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+
+      <!-- Admin Lock Screen -->
+      <div id="admin-lock-screen">
+        <p class="eyebrow">store management</p>
+        <h2 id="admin-title" class="modal__title">Admin Portal</h2>
+        <p style="margin-bottom: 14px; font-size: .92rem; color: var(--brown-soft);">Enter Admin PIN to manage orders and verify customer payments.</p>
+        
+        <form class="order-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="admin-pin-input">Admin Security PIN</label>
+            <input id="admin-pin-input" type="password" placeholder="PIN: 7728" maxlength="6" style="text-align: center; font-size: 1.2rem; letter-spacing: 4px;">
+          </div>
+          <div class="modal__actions modal__actions--stack" style="margin-top: 14px;">
+            <button class="btn btn--primary btn--block btn--lg" type="button" data-action="admin-unlock">
+              Unlock Admin Portal
+            </button>
+            <button class="btn btn--ghost btn--sm" type="button" data-action="admin-quick-unlock">
+              Quick Admin Demo Login (PIN: 7728)
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Admin Dashboard Screen -->
+      <div id="admin-dashboard-screen" hidden>
+        <div class="admin-top-bar">
+          <div>
+            <p class="eyebrow">store manager</p>
+            <h2 class="modal__title" style="margin: 0;">Order &amp; Customer Desk</h2>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn--ghost btn--sm" type="button" data-action="admin-refresh-orders">🔄 Refresh</button>
+            <button class="btn btn--ghost btn--sm" type="button" data-action="admin-lock">🔒 Lock</button>
+          </div>
+        </div>
+
+        <div class="admin-stats-row" id="admin-stats-row"></div>
+
+        <!-- Admin Navigation Tabs: Orders vs Registered Users -->
+        <div class="admin-nav-tabs">
+          <button class="admin-tab-btn is-active" type="button" data-action="admin-tab" data-tab="orders">
+            📦 Customer Orders <span class="tab-badge" id="admin-pending-tab-badge">0</span>
+          </button>
+          <button class="admin-tab-btn" type="button" data-action="admin-tab" data-tab="users">
+            👥 Registered Users <span class="tab-badge" id="admin-users-tab-badge">0</span>
+          </button>
+        </div>
+
+        <!-- Orders View -->
+        <div id="admin-view-orders">
+          <div style="margin: 12px 0 10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div>
+              <h3 style="font-size: 1.15rem; font-family: var(--font-display); margin:0;">Customer Orders</h3>
+              <p style="font-size: .84rem; color: var(--brown-soft); margin:2px 0 0;">Approve orders &amp; auto-send WhatsApp confirmation to customer.</p>
+            </div>
+            <div id="admin-user-filter-banner" style="display:none;" class="user-filter-banner">
+              <span>Filtering for: <strong id="admin-filtered-user-name">User</strong></span>
+              <button class="link-btn" type="button" data-action="admin-clear-user-filter">Show All Orders</button>
+            </div>
+          </div>
+
+          <div class="admin-orders-list" id="admin-orders-list">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Registered Users View -->
+        <div id="admin-view-users" hidden>
+          <div style="margin: 12px 0 10px;">
+            <h3 style="font-size: 1.15rem; font-family: var(--font-display); margin:0;">Registered Customers</h3>
+            <p style="font-size: .84rem; color: var(--brown-soft); margin:2px 0 0;">List of all users registered via mobile OTP. Click 'View Orders' to see user's purchases.</p>
+          </div>
+
+          <div class="admin-users-list" id="admin-users-list">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp button -->
+  <a class="floating-wa" id="floating-wa-btn" href="https://wa.me/917728990513?text=Hello%20DHAGA!%20%E2%99%A1%20I%20would%20like%20to%20order%20handmade%20crochet%20items." target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp at 7728990513">
+    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+    <span>Order on WhatsApp: <strong>7728990513</strong></span>
+  </a>
+
+  <!-- Toasts -->
+  <div class="toast-region" id="toast-region" role="status" aria-live="polite"></div>
+
+  <noscript><p class="noscript">DHAGA needs JavaScript to show products and the cart. Please enable it and refresh.</p></noscript>
+</body>
+</html>
