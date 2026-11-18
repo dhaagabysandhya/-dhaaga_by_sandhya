@@ -20,9 +20,9 @@
    ========================================================= */
 const CONFIG = {
   brandName: 'DHAGA',
-  // Mobile number 7728990513 for WhatsApp orders
-  whatsappNumber: '917728990513',
-  whatsappDisplay: '+91 77289 90513',
+  // Mobile number 6350370604 for WhatsApp orders
+  whatsappNumber: '916350370604',
+  whatsappDisplay: '+91 63503 70604',
   instagramUrl: 'https://www.instagram.com/your_dhaga_handle/',
   instagramHandle: '@dhaga.crochet',
   contactEmail: 'orders@dhaga.in',
@@ -795,7 +795,7 @@ function productCardHTML(p, i) {
       <p class="product-card__price">${formatINR(p.price)}</p>
       <div class="product-card__actions">
         <button class="icon-btn icon-btn--outline" type="button" data-action="quick-view" data-id="${p.id}" aria-label="Quick view: ${esc(p.name)}">${icon('i-eye')}</button>
-        <button class="icon-btn icon-btn--outline" type="button" data-action="card-order-wa" data-id="${p.id}" aria-label="Order ${esc(p.name)} on WhatsApp" title="Order on WhatsApp: 7728990513" style="color:#16a34a">${icon('i-whatsapp')}</button>
+        <button class="icon-btn icon-btn--outline" type="button" data-action="card-order-wa" data-id="${p.id}" aria-label="Order ${esc(p.name)} on WhatsApp" title="Order on WhatsApp: 6350370604" style="color:#16a34a">${icon('i-whatsapp')}</button>
         <button class="btn btn--primary btn--sm add-btn" type="button" data-action="add-to-cart" data-id="${p.id}"><span class="btn__label">Add to Cart</span></button>
       </div>
     </div>
@@ -1772,14 +1772,14 @@ async function renderMyOrdersList() {
         <div class="pending-pay-notice">
           <div>
             <strong>Awaiting Admin Payment Confirmation</strong><br>
-            Please send payment of <strong>${formatINR(o.totalAmount || 0)}</strong> via UPI / GPay / PhonePe to <strong>+91 7728990513</strong>.
+            Please send payment of <strong>${formatINR(o.totalAmount || 0)}</strong> via UPI / GPay / PhonePe to <strong>+91 6350370604</strong>.
           </div>
           <p style="margin: 0; font-size: .82rem; color: #78350F;">
             As requested by store rules: Once our Admin verifies and confirms receipt of payment, your order will be confirmed and tracking will activate!
           </p>
           <div class="pending-pay-notice__cta">
-            <a class="btn btn--whatsapp btn--sm" href="https://wa.me/917728990513?text=${encodeURIComponent(`Hello DHAGA! I have completed payment of ₹${o.totalAmount || ''} for Order #${orderNum}. Please verify and confirm my order.`)}" target="_blank" rel="noopener noreferrer">
-              <svg class="icon" aria-hidden="true" style="width:14px;height:14px;"><use href="#i-whatsapp"></use></svg> Share Payment Screenshot (+91 7728990513)
+            <a class="btn btn--whatsapp btn--sm" href="https://wa.me/916350370604?text=${encodeURIComponent(`Hello DHAGA! I have completed payment of ₹${o.totalAmount || ''} for Order #${orderNum}. Please verify and confirm my order.`)}" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true" style="width:14px;height:14px;"><use href="#i-whatsapp"></use></svg> Share Payment Screenshot (+91 6350370604)
             </a>
           </div>
         </div>
